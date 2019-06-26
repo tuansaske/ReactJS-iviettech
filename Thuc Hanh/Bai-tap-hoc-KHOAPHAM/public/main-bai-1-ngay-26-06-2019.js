@@ -1,12 +1,46 @@
-var FormDangNhap = React.createClass({ //phai viet hoa chu bien dau
-    render: function(){
-      return(
-        <div>
-        <h1>aaaaaaaaaa</h1>
+// var FormDangNhap = React.createClass({ //phai viet hoa chu bien dau
+//     render: function(){
+//       return(
+//         <div>
+//         <h1>aaaaaaaaaa</h1>
+//         </div>
+//         );
+//     }
+// });
+
+class FormDangNhap extends React.Component {
+  render() {
+    return (
+      <div className="wrap-form">
+        <span className="contact100-form-title">
+        Đăng nhập
+        </span>
+          <form>
+
+            <div className="group-input">
+              <label className="label-input100" >Tên đăng nhập *</label>
+              <input type="text" className="input100" name="user" placeholder="tuanna" />
+            </div>
+
+            <div className="group-input">
+              <label className="label-input100" >Mật Khẩu *</label>
+              <input type="password" className="input100" name="pass" placeholder="******" />
+            </div>
+
+            <div className="container-contact100-form-btn">
+              <button className="contact100-form-btn">
+                <span>
+                Submit
+                <i className="zmdi zmdi-arrow-right m-l-8"></i>
+                </span>
+              </button>
+            </div>
+
+          </form>
         </div>
-        );
-    }
-});
+    );
+  }
+}
 
 ReactDOM.render(<div><FormDangNhap /></div>, document.getElementById('root'));
 
