@@ -6,11 +6,7 @@ var FormDangNhap = React.createClass({ //phai viet hoa chu bien dau
     }
 });
 
-ReactDOM.render(
-  <div>
-    <FormDangNhap />
-  </div>
-  ,document.getElementById("root"));
+ReactDOM.render(<FormDangNhap />, document.getElementById('root'));
 
 
 // const a = (
