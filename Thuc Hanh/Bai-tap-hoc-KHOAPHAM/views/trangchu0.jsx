@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -15,9 +15,8 @@
 </head>
 
 <body>
-  <div id="root" class="container-form"></div>
-  <!-- <script type="text/babel" src="main-bai-1-ngay-26-06-2019.js"></script> -->
-  <script type="text/babel" src="props.js"></script>
+  <div id="root" class="container-form 1"></div>
+  <script type="text/babel" src="main-bai-1-ngay-26-06-2019.js"></script>
 </body>
 
 </html>
