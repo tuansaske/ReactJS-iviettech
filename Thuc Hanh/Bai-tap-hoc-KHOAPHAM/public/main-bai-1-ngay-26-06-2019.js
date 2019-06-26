@@ -1,12 +1,14 @@
 var FormDangNhap = React.createClass({ //phai viet hoa chu bien dau
     render: function(){
       return(
+        <div>
         <h1>aaaaaaaaaa</h1>
+        </div>
         );
     }
 });
 
-ReactDOM.render(<FormDangNhap />, document.getElementById('root'));
+ReactDOM.render(<div><FormDangNhap /></div>, document.getElementById('root'));
 
 
 // const a = (
