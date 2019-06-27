@@ -10,3 +10,6 @@ app.listen(3000);
 app.get("/", function(req, res){
   res.render("trangchu");
 });
+
+
+//chay server: node index.js
