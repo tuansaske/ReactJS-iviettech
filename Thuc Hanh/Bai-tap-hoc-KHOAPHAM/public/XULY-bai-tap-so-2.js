@@ -288,7 +288,7 @@ const DulieuItems = [
   }
 ];
 
-const DodulieuItems = DulieuItems.map((DulieuItem) =>{
+const DodulieuItems = DulieuItems.map((DulieuItem) =>{ //map tương tự như 1 vòng lặp
     return(
       <Item
           key={DulieuItem.id}
