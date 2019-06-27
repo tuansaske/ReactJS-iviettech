@@ -18,11 +18,6 @@ class FormDangNhap extends React.Component { // teen Component phai viet hoa chu
 }
 
 ReactDOM.render(
-<<<<<<< HEAD
-  <FormDangNhap />
-  ,document.getElementById('root')
-);
-=======
   <div>
     <FormDangNhap Layten="aaaa"></FormDangNhap>
     <FormDangNhap Layten="BBBB"></FormDangNhap>
@@ -46,7 +41,6 @@ ReactDOM.render(
 //   </div>
 //   , document.getElementById('root')
 // );
->>>>>>> d9272ed044fdb8ce600f5bc839de3fc2491a7807
 
 
 // const a = (
