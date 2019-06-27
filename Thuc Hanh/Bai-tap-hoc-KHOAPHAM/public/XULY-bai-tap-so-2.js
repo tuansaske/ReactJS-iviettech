@@ -153,91 +153,173 @@ class Banner extends React.Component{
   }
 }
 
-function ImageItem(props){
-  return(
-    <img className="card-img-top" src={props.anh.srcImageItem1} alt={props.anh.nameImageItem1} />
-  )
-}
+// function ImageItem(props){
+//   return(
+//     <img className="card-img-top" src={props.anh.srcImageItem1} alt={props.anh.nameImageItem1} />
+//   )
+// }
+//
+// const danhsachImageItem = {
+//   ImageItem1: {
+//     srcImageItem1:"http://placehold.it/700x400/0000FF?Text=anh-1",
+//     nameImageItem1:"Ảnh số 1"
+//   },
+//   ImageItem2:{
+//     srcImageItem2:"http://placehold.it/700x400/000000?Text=anh-2",
+//     nameImageItem1:"Ảnh số 2"
+//   },
+//   ImageItem3:{
+//     srcImageItem3:"http://placehold.it/700x400/0000FF?Text=anh-3",
+//     nameImageItem1:"Ảnh số 3"
+//   },
+//   ImageItem4:{
+//     srcImageItem4:"http://placehold.it/700x400/000000?Text=anh-4",
+//     nameImageItem1:"Ảnh số 4"
+//   }
+// }
+//
+// function MotaItem(props){
+//   return(
+//     <p className="card-text">{props.Mota.Mota}</p>
+//   );
+// }
+//
+// const DulieuMotaItem = {
+//   DulieuMotaItem: {
+//     Mota:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"
+//   }
+// }
+//
+// function Item(props){
+//   return(
+    // <div className="col-lg-4 col-md-6 mb-4">
+    //   <div className="card h-100">
+    //     <a href="#">
+    //       <ImageItem anh={danhsachImageItem.ImageItem1}/>
+    //     </a>
+    //     <div className="card-body">
+    //       <h4 className="card-title">
+    //         <a href="#">{props.item.tenItem}</a>
+    //       </h4>
+    //       <h5>{props.item.GiaItem} đ</h5>
+    //     {/* <MotaItem Mota={DulieuMotaItem.DulieuMotaItem}/> */}
+    //       <div className="card-text">{props.item.MotaItem}</div>
+    //     </div>
+    //     <div className="card-footer">
+    //       <small className="text-muted">{props.item.ratingItem}</small>
+    //     </div>
+    //   </div>
+    // </div>
+//   )
+// }
+//
+// const dulieuItem ={
+//   dulieuItem1:{
+//     tenItem:"LAPTOP ACER SWIFT 5 SF514 53T 740R",
+//     GiaItem:"27990000",
+//     MotaItem:"CPU: Intel Core i7 8565U<br>RAM: 8GB DDR4<br>HDD: 256GB SSD PCIe<br>VGA: Intel UHD Graphics 620<br>Màn hình: 14 FHD<br>OS Windows 10 SL",
+//     ratingItem:"★ ★ ★ ★ ☆"
+//   },
+//   dulieuItem2:{
+//     tenItem:"Bộ vi xử lý CPU Intel Core i3-9100F (3.6Ghz, 6M Cache, up to 4.20 GHz)",
+//     GiaItem:"2900000",
+//     "MotaItem":"<p>Intel Core i3-8100</p>\r\n<p>Nh&acirc;n CPU: 4/Luồng CPU: 4</p>\r\n<p>Bộ nhớ đệm: 6MB, L3 cache</p>\r\n<p>Kh&ocirc;ng t&iacute;ch hợp đồ hoạ</p>\r\n<p>C&ocirc;ng nghệ: 14nm</p>\r\n<p>Điện &aacute;p ti&ecirc;u thụ tối đa: 65W</p>",
+//     ratingItem:"★ ★ ★ ★ ★"
+//   }
+// } //kiểu viết const trong ES6. BIẾN KHÔNG THAY ĐỔI GIÁ TRỊ. bên trong là JSON
 
-const danhsachImageItem = {
-  ImageItem1: {
-    srcImageItem1:"http://placehold.it/700x400/0000FF?Text=anh-1",
-    nameImageItem1:"Ảnh số 1"
-  },
-  ImageItem2:{
-    srcImageItem2:"http://placehold.it/700x400/000000?Text=anh-2",
-    nameImageItem1:"Ảnh số 2"
-  },
-  ImageItem3:{
-    srcImageItem3:"http://placehold.it/700x400/0000FF?Text=anh-3",
-    nameImageItem1:"Ảnh số 3"
-  },
-  ImageItem4:{
-    srcImageItem4:"http://placehold.it/700x400/000000?Text=anh-4",
-    nameImageItem1:"Ảnh số 4"
-  }
-}
 
-function MotaItem(props){
-  return(
-    <p className="card-text">{props.Mota.Mota}</p>
-  );
-}
 
-const DulieuMotaItem = {
-  DulieuMotaItem: {
-    Mota:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"
-  }
-}
 
-function Item(props){
-  return(
-    <div className="col-lg-4 col-md-6 mb-4">
-      <div className="card h-100">
-        <a href="#">
-          <ImageItem anh={danhsachImageItem.ImageItem1}/>
-        </a>
-        <div className="card-body">
-          <h4 className="card-title">
-            <a href="#">{props.item.tenItem}</a>
-          </h4>
-          <h5>{props.item.GiaItem} đ</h5>
-        {/* <MotaItem Mota={DulieuMotaItem.DulieuMotaItem}/> */}
-          <div className="card-text">{props.item.MotaItem}</div>
-        </div>
-        <div className="card-footer">
-          <small className="text-muted">{props.item.ratingItem}</small>
+
+
+class Item extends React.Component{
+  render(){
+    return(
+      <div className="col-lg-4 col-md-6 mb-4">
+        <div className="card h-100">
+          <a href="#">
+            <img className="card-img-top" src={this.props.srcImageItem} alt={this.props.nameImageItem} />
+          </a>
+          <div className="card-body">
+            <h4 className="card-title">
+              <a href="#">{this.props.tenItem}</a>
+            </h4>
+            <h5>{this.props.GiaItem} đ</h5>
+          {/* <MotaItem Mota={DulieuMotaItem.DulieuMotaItem}/> */}
+            <div className="card-text">{this.props.MotaItem}</div>
+          </div>
+          <div className="card-footer">
+            <small className="text-muted">{this.props.ratingItem}</small>
+          </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
-const dulieuItem ={
-  dulieuItem1:{
+const DulieuItems = [
+  {
+    id:1,
     tenItem:"LAPTOP ACER SWIFT 5 SF514 53T 740R",
+    srcImageItem:"http://placehold.it/700x400/0000FF/?text=ảnh%201",
+    nameImageItem:"Anh sp so 1",
     GiaItem:"27990000",
     MotaItem:"CPU: Intel Core i7 8565U<br>RAM: 8GB DDR4<br>HDD: 256GB SSD PCIe<br>VGA: Intel UHD Graphics 620<br>Màn hình: 14 FHD<br>OS Windows 10 SL",
     ratingItem:"★ ★ ★ ★ ☆"
   },
-  dulieuItem2:{
+  {
+    id:2,
     tenItem:"Bộ vi xử lý CPU Intel Core i3-9100F (3.6Ghz, 6M Cache, up to 4.20 GHz)",
+    srcImageItem:"http://placehold.it/700x400/000000/?text=ảnh%202",
+    nameImageItem:"Anh sp so 2",
+    GiaItem:"2900000",
+    "MotaItem":"<p>Intel Core i3-8100</p>\r\n<p>Nh&acirc;n CPU: 4/Luồng CPU: 4</p>\r\n<p>Bộ nhớ đệm: 6MB, L3 cache</p>\r\n<p>Kh&ocirc;ng t&iacute;ch hợp đồ hoạ</p>\r\n<p>C&ocirc;ng nghệ: 14nm</p>\r\n<p>Điện &aacute;p ti&ecirc;u thụ tối đa: 65W</p>",
+    ratingItem:"★ ★ ★ ★ ★"
+  },
+  {
+    id:3,
+    tenItem:"Bộ vi xử lý CPU Intel Core i3-9100F (3.6Ghz, 6M Cache, up to 4.20 GHz)",
+    srcImageItem:"http://placehold.it/700x400/008800/?text=ảnh%203",
+    nameImageItem:"Anh sp so 2",
     GiaItem:"2900000",
     "MotaItem":"<p>Intel Core i3-8100</p>\r\n<p>Nh&acirc;n CPU: 4/Luồng CPU: 4</p>\r\n<p>Bộ nhớ đệm: 6MB, L3 cache</p>\r\n<p>Kh&ocirc;ng t&iacute;ch hợp đồ hoạ</p>\r\n<p>C&ocirc;ng nghệ: 14nm</p>\r\n<p>Điện &aacute;p ti&ecirc;u thụ tối đa: 65W</p>",
     ratingItem:"★ ★ ★ ★ ★"
   }
-} //kiểu viết const trong ES6. BIẾN KHÔNG THAY ĐỔI GIÁ TRỊ. bên trong là JSON
+];
+
+const DodulieuItems = DulieuItems.map((DulieuItem) =>{
+    return(
+      <Item
+          key={DulieuItem.id}
+          srcImageItem={DulieuItem.srcImageItem}
+          nameImageItem={DulieuItem.nameImageItem}
+          GiaItem={DulieuItem.GiaItem}
+          MotaItem={DulieuItem.MotaItem}
+          ratingItem={DulieuItem.ratingItem}
+        >
+          {DulieuItem.tenItem}
+        </Item>
+    )
+  }
+);// LỖI return... xuong dong khong chap nhan enter xuong dong! Bat buoc phai return(...) moi cho enter xuong dong
+console.log({DodulieuItems});
 
 class Items extends React.Component{
   render(){
     return(
       <div className="row">
-        <Item item={dulieuItem.dulieuItem1}/>
-        <Item item={dulieuItem.dulieuItem2}/>
+        {/* <Item
+          tenItem="aaaaaaaaaa"
+          MotaItem="bbb"
+        /> */}
+        { DodulieuItems }
       </div>
-    )
+
+    );
   }
 }
+
 
 class PageContent extends React.Component{
   render(){
