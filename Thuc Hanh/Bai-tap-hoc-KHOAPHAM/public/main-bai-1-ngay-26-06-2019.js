@@ -42,7 +42,10 @@ class FormDangNhap extends React.Component {
   }
 }
 
-ReactDOM.render(<div><FormDangNhap /></div>, document.getElementById('root'));
+ReactDOM.render(
+  <FormDangNhap />
+  ,document.getElementById('root')
+);
 
 
 // const a = (
