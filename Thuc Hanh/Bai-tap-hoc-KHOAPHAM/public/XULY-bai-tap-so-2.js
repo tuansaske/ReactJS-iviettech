@@ -106,11 +106,16 @@ const DuLieuMenuLeft = {
 
 class MenuLeft extends React.Component{
   render(){
+
+    var bgStyle = {
+      backgroundColor: "#aaa"
+    }
+
     return(
       <div className="col-lg-3">
         <h1 className="my-4">Danh mục</h1>
         <div className="list-group">
-          <a href="#" className="list-group-item">{this.props.MenuLeft1}</a>
+          <a href="#" className="list-group-item" style={bgStyle}>{this.props.MenuLeft1}</a>
           <a href="#" className="list-group-item">{this.props.MenuLeft2}</a>
           <a href="#" className="list-group-item">{this.props.MenuLeft3}</a>
           <a href="#" className="list-group-item">{this.props.MenuLeft4}</a>
@@ -228,36 +233,6 @@ class Banner extends React.Component{
 //   }
 // } //kiểu viết const trong ES6. BIẾN KHÔNG THAY ĐỔI GIÁ TRỊ. bên trong là JSON
 
-
-
-
-
-
-class Item extends React.Component{
-  render(){
-    return(
-      <div className="col-lg-4 col-md-6 mb-4">
-        <div className="card h-100">
-          <a href="#">
-            <img className="card-img-top" src={this.props.srcImageItem} alt={this.props.nameImageItem} />
-          </a>
-          <div className="card-body">
-            <h4 className="card-title">
-              <a href="#">{this.props.tenItem}</a>
-            </h4>
-            <h5>{this.props.GiaItem} đ</h5>
-          {/* <MotaItem Mota={DulieuMotaItem.DulieuMotaItem}/> */}
-            <div className="card-text">{this.props.MotaItem}</div>
-          </div>
-          <div className="card-footer">
-            <small className="text-muted">{this.props.ratingItem}</small>
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
-
 const DulieuItems = [
   {
     id:1,
@@ -265,7 +240,7 @@ const DulieuItems = [
     srcImageItem:"http://placehold.it/700x400/0000FF/?text=ảnh%201",
     nameImageItem:"Anh sp so 1",
     GiaItem:"27990000",
-    MotaItem:"CPU: Intel Core i7 8565U<br>RAM: 8GB DDR4<br>HDD: 256GB SSD PCIe<br>VGA: Intel UHD Graphics 620<br>Màn hình: 14 FHD<br>OS Windows 10 SL",
+    MotaItem:"<p>Intel Core i3-8100</p>\r\n<p>Nh&acirc;n CPU: 4/Luồng CPU: 4</p>\r\n<p>Bộ nhớ đệm: 6MB, L3 cache</p>\r\n<p>Kh&ocirc;ng t&iacute;ch hợp đồ hoạ</p>\r\n<p>C&ocirc;ng nghệ: 14nm</p>\r\n<p>Điện &aacute;p ti&ecirc;u thụ tối đa: 65W</p>",
     ratingItem:"★ ★ ★ ★ ☆"
   },
   {
@@ -288,18 +263,60 @@ const DulieuItems = [
   }
 ];
 
+class Images extends React.Component{
+  render(){
+    return(
+      <a href="#">
+        <img className="card-img-top" src={this.props.src} alt={this.props.alt} />
+      </a>/*Truyền dữ liệu từ cha xuống con và đổ trực tiếp ra SRC và ATL*/
+    )
+  }
+}
+
+
+class Item extends React.Component{
+  render(){
+    return(
+      <div className="col-lg-4 col-md-6 mb-4">
+        <div className="card h-100">
+            <Images
+            src={this.props.srcImageItem}
+            alt={this.props.nameImageItem}
+              // srcImageItem={DulieuItem.srcImageItem}
+              // nameImageItem={DulieuItem.nameImageItem}
+            />
+          <div className="card-body">
+            <h4 className="card-title">
+              <a href="#">{this.props.tenItem}</a>
+            </h4>
+            <h5>{this.props.GiaItem} đ</h5>
+          {/* <MotaItem Mota={DulieuMotaItem.DulieuMotaItem}/> */}
+            <div className="card-text">{this.props.MotaItem}</div>
+          </div>
+          <div className="card-footer">
+            <small className="text-muted">{this.props.ratingItem}</small>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+
+
 const DodulieuItems = DulieuItems.map((DulieuItem) =>{ //map tương tự như 1 vòng lặp
     return(
       <Item
           key={DulieuItem.id}
-          srcImageItem={DulieuItem.srcImageItem}
-          nameImageItem={DulieuItem.nameImageItem}
           GiaItem={DulieuItem.GiaItem}
           MotaItem={DulieuItem.MotaItem}
           ratingItem={DulieuItem.ratingItem}
-        >
+          srcImageItem={DulieuItem.srcImageItem}
+          nameImageItem={DulieuItem.nameImageItem}
+          tenItem={DulieuItem.tenItem}
+      >
           {DulieuItem.tenItem}
-        </Item>
+      </Item>
     )
   }
 );// LỖI return... xuong dong khong chap nhan enter xuong dong! Bat buoc phai return(...) moi cho enter xuong dong
@@ -309,10 +326,7 @@ class Items extends React.Component{
   render(){
     return(
       <div className="row">
-        {/* <Item
-          tenItem="aaaaaaaaaa"
-          MotaItem="bbb"
-        /> */}
+
         { DodulieuItems }
       </div>
 
