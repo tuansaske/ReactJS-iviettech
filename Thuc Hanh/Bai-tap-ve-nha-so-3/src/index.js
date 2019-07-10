@@ -15,6 +15,7 @@ ReactDOM.render(
     UrlNameCard="Tuansaske"
     LinkFacebook="#facebook"
     LinkGitHub="#github"
+    LinkYoutube="#youtube"
 
   />,
 a);

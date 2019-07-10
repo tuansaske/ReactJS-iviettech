@@ -100,6 +100,7 @@ class LinkUrlTaskGroup extends React.Component{
       <div className="card-body text-center">
         <LinkUrl NameSocial="Facebook" href={this.props.LinkFacebook} />
         <LinkUrl NameSocial="Github" href={this.props.LinkGitHub}/>
+        <LinkUrl NameSocial="Youtube" href={this.props.LinkYoutube}/>
       </div>
     )
   }
