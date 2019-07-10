@@ -48,40 +48,22 @@ class ListTaskGroup extends React.Component{
   render(){
     return(
       <ul className="list-group list-group-flush text-center">
-          <SubmittedTaskName nameTaskNode="Submitted" {...this.props}></SubmittedTaskName>
-          <MadeTaskName nameTaskNode="Made" {...this.props}></MadeTaskName>
+        <TaskName nameTaskNode="Submitted" CountTask={this.props.CountSubmittedTask}/>
+        <TaskName nameTaskNode="Made" CountTask={this.props.CountMadeTask}/>
       </ul>
     )
   }
 }
 
-
-class SubmittedTaskName extends React.Component{
+class TaskName extends React.Component{
   render(){
     return(
-      <>
-        <li className="list-group-item">
-          {this.props.nameTaskNode} <span className="font-weight-bold">{this.props.CountSubmittedTask}</span> products
-        </li>
-      </>
+      <li className="list-group-item">
+        {this.props.nameTaskNode} <span className="font-weight-bold">{this.props.CountTask}</span> products
+      </li>
     )
   }
 }
-
-
-
-class MadeTaskName extends React.Component{
-  render(){
-    return(
-      <>
-        <li className="list-group-item">
-          {this.props.nameTaskNode} <span className="font-weight-bold">{this.props.CountMadeTask}</span> products
-        </li>
-      </>
-    )
-  }
-}
-
 
 
 class CardNameBody extends React.Component{
