@@ -10,8 +10,9 @@ const DulieuItems = [
     atlImageNameCard:"Anh avatar so 1",
     CountSubmittedTask:"6",
     CountMadeTask:"8",
-    LinkFacebook:"#",
-    LinkGitHub:"#",
+    LinkFacebook:"#facebook",
+    LinkGitHub:"#github",
+    LinkYoutube:"#youtube",
   }
 ];
 
