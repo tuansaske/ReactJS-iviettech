@@ -13,8 +13,8 @@ ReactDOM.render(
     CountMadeTask="8"
     NameCard="Nguyen Anh Tuan"
     UrlNameCard="Tuansaske"
-    LinkFacebook="#"
-    LinkGitHub="#"
+    LinkFacebook="#facebook"
+    LinkGitHub="#github"
 
   />,
 a);

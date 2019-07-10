@@ -116,8 +116,8 @@ class LinkUrlTaskGroup extends React.Component{
   render(){
     return(
       <div className="card-body text-center">
-        <LinkUrl NameSocial="Facebook" LinkFacebook="#a"/>
-        <LinkUrl NameSocial="Github" LinkGitHub="#b"/>
+        <LinkUrl NameSocial="Facebook" href={this.props.LinkFacebook} />
+        <LinkUrl NameSocial="Github" href={this.props.LinkGitHub}/>
       </div>
     )
   }
@@ -126,7 +126,7 @@ class LinkUrlTaskGroup extends React.Component{
 class LinkUrl extends React.Component{
   render(){
     return(
-        <a href={this.props.LinkFacebook} className="card-link">{this.props.NameSocial}</a>
+        <a href={this.props.href} className="card-link">{this.props.NameSocial}</a>
     )
   }
 }
