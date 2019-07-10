@@ -268,7 +268,8 @@ class Images extends React.Component{
     return(
       <a href="#">
         <img className="card-img-top" src={this.props.src} alt={this.props.alt} />
-      </a>/*Truyền dữ liệu từ cha xuống con và đổ trực tiếp ra SRC và ATL*/
+        {/*Truyền dữ liệu từ cha xuống con và đổ trực tiếp ra SRC và ATL*/}
+      </a>
     )
   }
 }
