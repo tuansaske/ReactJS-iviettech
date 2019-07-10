@@ -4,11 +4,12 @@ import '../bai-so-2/baiSo2.css';
 const DulieuItems = [
   {
     id:1,
-    tenItem:"Nguyen Anh Tuan",
-    srcImageItem:"http://placehold.it/400/0000FF/?text=Avatar",
-    atlImage:"Anh avatar so 1",
-    SubmittedTask:"6",
-    MadeTask:"8",
+    NameCard:"Nguyen Anh Tuan",
+    UrlNameCard:"Tuansaske",
+    srcImageNameCard:"http://placehold.it/400/0000FF/?text=Avatar",
+    atlImageNameCard:"Anh avatar so 1",
+    CountSubmittedTask:"6",
+    CountMadeTask:"8",
     LinkFacebook:"#",
     LinkGitHub:"#",
   }
@@ -21,11 +22,10 @@ class BaiTapSo2 extends React.Component{
     return(
       <div className="container">
         <div className="container card" style={{width: '18rem'}}>
-          <Images {...this.props}
-            ></Images>
-          <CardNameBody/>
-          <ListTaskGroup/>
-          <LinkTaskGroup/>
+          <Images {...this.props}/>
+          <CardNameBody {...this.props}/>
+          <ListTaskGroup {...this.props}/>
+          <LinkUrlTaskGroup {...this.props}/>
         </div>
       </div>
     )
@@ -37,61 +37,32 @@ class Images extends React.Component{
   render(){
     return(
       <img className="card-img-top"
-        src={this.props.srcImageItem}
-        alt={this.props.atlImage} />
+        src={this.props.srcImageNameCard}
+        alt={this.props.atlImageNameCard} />
     )
   }
 }
 
-class CardNameBody extends React.Component{
-  render(){
-    return(
-      <div className="card-body text-center">
-        <h5 className="card-title">Nguyen Anh Tuan</h5>
-        <p className="card-text">@Tuansaske</p>
-      </div>
-    )
-  }
-}
 
 class ListTaskGroup extends React.Component{
   render(){
     return(
       <ul className="list-group list-group-flush text-center">
-        <TaskName/>
+          <SubmittedTaskName nameTaskNode="Submitted" {...this.props}></SubmittedTaskName>
+          <MadeTaskName nameTaskNode="Made" {...this.props}></MadeTaskName>
       </ul>
     )
   }
 }
 
-class TaskName extends React.Component{
-  render(){
-    return(
-      <>
-        <TaskNameNode class="list-group-item">Submitted <CountNode/> products</TaskNameNode>
-        <TaskNameNode class="list-group-item">Made <span className="font-weight-bold">8</span> products</TaskNameNode>
-        <TaskNameNode class="list-group-item">...</TaskNameNode>
-        <TaskNameNode class="list-group-item">...</TaskNameNode>
-      </>
-    )
-  }
-}
 
-class TaskNameNode extends React.Component{
+class SubmittedTaskName extends React.Component{
   render(){
     return(
       <>
-        <li className={this.props.class}>{this.props.children}</li>
-      </>
-    )
-  }
-}
-
-class CountNode extends React.Component{
-  render(){
-    return(
-      <>
-        <span className="font-weight-bold">{this.props.children}</span>
+        <li className="list-group-item">
+          {this.props.nameTaskNode} <span className="font-weight-bold">{this.props.CountSubmittedTask}</span> products
+        </li>
       </>
     )
   }
@@ -99,13 +70,63 @@ class CountNode extends React.Component{
 
 
 
-class LinkTaskGroup extends React.Component{
+class MadeTaskName extends React.Component{
+  render(){
+    return(
+      <>
+        <li className="list-group-item">
+          {this.props.nameTaskNode} <span className="font-weight-bold">{this.props.CountMadeTask}</span> products
+        </li>
+      </>
+    )
+  }
+}
+
+
+
+class CardNameBody extends React.Component{
   render(){
     return(
       <div className="card-body text-center">
-        <a href="#" className="card-link">Facebook</a>
-      <a href="#" className="card-link">Github</a>
+        <YourNameInCard {...this.props}/>
+        <UrlNameCard {...this.props}/>
       </div>
+    )
+  }
+}
+
+class YourNameInCard extends React.Component{
+  render(){
+    return(
+      <h5 className="card-title">{this.props.NameCard}</h5>
+    )
+  }
+}
+
+class UrlNameCard extends React.Component{
+  render(){
+    return(
+      <p className="card-text">@{this.props.UrlNameCard}</p>
+    )
+  }
+}
+
+
+class LinkUrlTaskGroup extends React.Component{
+  render(){
+    return(
+      <div className="card-body text-center">
+        <LinkUrl NameSocial="Facebook" LinkFacebook="#a"/>
+        <LinkUrl NameSocial="Github" LinkGitHub="#b"/>
+      </div>
+    )
+  }
+}
+
+class LinkUrl extends React.Component{
+  render(){
+    return(
+        <a href={this.props.LinkFacebook} className="card-link">{this.props.NameSocial}</a>
     )
   }
 }

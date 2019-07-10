@@ -7,10 +7,15 @@ import * as serviceWorker from './serviceWorker';
 let a = document.getElementById('root');
 ReactDOM.render(
   <BaiTapSo2
-    srcImageItem="http://placehold.it/400/0000FF/?text=Avatar"
-    atlImage="Anh avatar so 1"
-    SubmittedTask="6"
-    MadeTask="8"
+    srcImageNameCard="http://placehold.it/400/0000FF/?text=Avatar"
+    atlImageNameCard="Anh avatar so 1"
+    CountSubmittedTask="6"
+    CountMadeTask="8"
+    NameCard="Nguyen Anh Tuan"
+    UrlNameCard="Tuansaske"
+    LinkFacebook="#"
+    LinkGitHub="#"
+
   />,
 a);
 
