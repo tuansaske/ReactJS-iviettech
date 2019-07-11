@@ -10,8 +10,8 @@ class ButtomNum extends React.Component{
   }
 
 
-  suKienBamNut = function(value) {
-    console.log(`Hello, my name is ${value}`);
+  suKienBamNut = function() {
+    console.log(eval('3 * 2'));
   }
 
   render(){
