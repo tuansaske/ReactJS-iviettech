@@ -6,17 +6,17 @@ import ScreenResult from '../bai-so-1/componentCalc/screenResult.js';
 
 class Caculator extends React.Component{
 
-  # constructor(){
-  #   super();
-  #
-  #   this.state = { ketquaTinhtoan : ""};
-  #   this.suKienBamNut = this.suKienBamNut.bind(this);
-  # }
-  #
-  #
-  # suKienBamNut = function(value) {
-  #   console.log(`Hello, my name is ${value}`);
-  # }
+  constructor(){
+    super();
+
+    this.state = { ketquaTinhtoan : ""};
+    this.suKienBamNut = this.suKienBamNut.bind(this);
+  }
+
+
+  suKienBamNut = function(value) {
+    console.log(`Hello, my name is ${value}`);
+  }
 
 
   render(){
