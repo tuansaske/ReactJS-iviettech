@@ -2,6 +2,17 @@ import React from 'react';
 
 
 class ButtomNum extends React.Component{
+  constructor(){
+    super();
+
+    this.state = { ketquaTinhtoan : ""};
+    this.suKienBamNut = this.suKienBamNut.bind(this);
+  }
+
+
+  suKienBamNut = function(value) {
+    console.log(`Hello, my name is ${value}`);
+  }
 
   render(){
     return(

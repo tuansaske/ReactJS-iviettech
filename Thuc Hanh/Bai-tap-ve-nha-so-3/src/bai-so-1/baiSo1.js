@@ -6,17 +6,17 @@ import ScreenResult from '../bai-so-1/componentCalc/screenResult.js';
 
 class Caculator extends React.Component{
 
-  constructor(props){
-    super(props);
-
-    this.state = { ketquaTinhtoan : ""};
-    this.suKienBamNut = this.suKienBamNut.bind(this);
-  }
-
-
-  suKienBamNut = function(value) {
-    console.log(`Hello, my name is ${value}`);
-  }
+  # constructor(){
+  #   super();
+  #
+  #   this.state = { ketquaTinhtoan : ""};
+  #   this.suKienBamNut = this.suKienBamNut.bind(this);
+  # }
+  #
+  #
+  # suKienBamNut = function(value) {
+  #   console.log(`Hello, my name is ${value}`);
+  # }
 
 
   render(){
@@ -24,7 +24,8 @@ class Caculator extends React.Component{
       <div className="container">
         <div className="calc-body">
           <ScreenResult/>
-        <ButtomNum suKienBamNut={this.suKienBamNut}/>
+          <ButtomNum suKienBamNut={this.suKienBamNut}/>
+          <Toggle2/>
         </div>
       </div>
     )
@@ -33,3 +34,38 @@ class Caculator extends React.Component{
 
 
 export default Caculator;
+
+
+class Toggle2 extends React.Component {
+
+
+  render() {
+    return (
+      <Toggle/>
+    );
+  }
+}
+
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
