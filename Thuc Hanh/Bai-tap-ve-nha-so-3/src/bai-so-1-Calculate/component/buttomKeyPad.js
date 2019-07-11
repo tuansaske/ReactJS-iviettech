@@ -5,7 +5,7 @@ class ButtomNum extends React.Component{
   constructor(){
     super();
 
-    this.state = { ketquaTinhtoan : ""};
+    this.state = { ketquaTinhtoan : 0};
     this.suKienBamNut = this.suKienBamNut.bind(this);
   }
 
