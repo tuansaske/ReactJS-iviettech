@@ -13,7 +13,7 @@ class Caculator extends React.Component{
     return(
       <div className="container">
         <div className="calc-body">
-          <ScreenResult/>
+          <ScreenResult ketquaTinhtoan={this.state.ketquaTinhtoan}/>
           <ButtomNum suKienBamNut={this.suKienBamNut}/>
           <Toggle2/>
         </div>
