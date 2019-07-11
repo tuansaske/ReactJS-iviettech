@@ -60,7 +60,7 @@ import ReactDOM from 'react-dom';
 import Caculator from './bai-so-1/baiSo1';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<Caculator />, document.getElementById('root'));
+ReactDOM.render(<Caculator/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
