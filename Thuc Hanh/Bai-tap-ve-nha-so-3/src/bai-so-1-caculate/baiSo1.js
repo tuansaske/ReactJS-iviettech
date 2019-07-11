@@ -7,8 +7,6 @@ import ScreenResult from '../bai-so-1/componentCalc/screenResult.js';
 class Caculator extends React.Component{
 
 
-
-
   render(){
     return(
       <div className="container">

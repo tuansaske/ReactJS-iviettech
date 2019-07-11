@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class ButtomNum extends React.Component{
   constructor(){
     super();
