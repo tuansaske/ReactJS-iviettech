@@ -14,6 +14,13 @@ class ButtomNum extends React.Component{
     console.log(eval('3 * 2'));
   }
 
+  clearScreen = () => {
+      this.setState({
+          ketquaTinhtoan: ""
+      })
+  };
+
+
   render(){
     return(
       <>
