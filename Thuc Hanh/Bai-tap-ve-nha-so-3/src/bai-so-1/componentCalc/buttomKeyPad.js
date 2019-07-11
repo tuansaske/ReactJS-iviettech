@@ -57,10 +57,6 @@ export default ButtomNum;
 
 class Buttomcalc extends React.Component{
   render(){
-    // let className = 'button l';
-    // if (this.props.isActive) {
-    //   className += ' menu-active';
-    // }
     return(
       <div className={this.props.className}
            onClick={this.props.suKienBamNut}
