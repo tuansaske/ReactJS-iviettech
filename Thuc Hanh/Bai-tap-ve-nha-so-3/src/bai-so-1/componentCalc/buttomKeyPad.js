@@ -7,38 +7,54 @@ class ButtomNum extends React.Component{
     return(
       <>
       <div className="calc-button-row">
-          <div className="button c l">C</div>
-          <div className="button l">≠</div>
-          <div className="button l">%</div>
-          <div className="button l">/</div>
-        </div>
-        <div className="calc-button-row">
-          <div className="button">7</div>
-          <div className="button">8</div>
-          <div className="button">9</div>
-          <div className="button l">x</div>
-        </div>
-        <div className="calc-button-row">
-          <div className="button">4</div>
-          <div className="button">5</div>
-          <div className="button">6</div>
-          <div className="button l">−</div>
-        </div>
-        <div className="calc-button-row">
-          <div className="button">1</div>
-          <div className="button">2</div>
-          <div className="button">3</div>
-          <div className="button l">+</div>
-        </div>
-        <div className="calc-button-row">
-          <div className="button l">.</div>
-          <div className="button">0</div>
-          <div className="button l">&lt;</div>
-          <div className="button l" style={{background: '#D95D4E'}}>=</div>
-        </div>
-        </>
+        <Buttomcalc value="C" className="button c" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="#" className="button l" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="%" className="button l" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="/"className="button l" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+      </div>
+      <div className="calc-button-row">
+        <Buttomcalc value="7" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="8" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="9" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="x"className="button l" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+      </div>
+      <div className="calc-button-row">
+        <Buttomcalc value="4" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="5" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="6" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="-"className="button l" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+      </div>
+      <div className="calc-button-row">
+        <Buttomcalc value="3" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="2" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="1" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="+"className="button l" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+      </div>
+      <div className="calc-button-row">
+        <Buttomcalc value="."  className="button l" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="0" className="button" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="&lt;" className="button l" suKienBamNut={this.suKienBamNut}></Buttomcalc>
+        <Buttomcalc value="=" className="button l" suKienBamNut={this.suKienBamNut}
+        ></Buttomcalc>
+      </div>
+      </>
     )
   }
 }
 
 export default ButtomNum;
+
+class Buttomcalc extends React.Component{
+  render(){
+    // let className = 'button l';
+    // if (this.props.isActive) {
+    //   className += ' menu-active';
+    // }
+    return(
+      <div className={this.props.className}
+           onClick={this.props.suKienBamNut}
+          value={this.props.value}
+      >{this.props.value}</div>
+    )
+  }
+}

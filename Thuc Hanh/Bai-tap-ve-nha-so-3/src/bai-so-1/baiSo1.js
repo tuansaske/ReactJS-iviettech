@@ -6,12 +6,25 @@ import ScreenResult from '../bai-so-1/componentCalc/screenResult.js';
 
 class Caculator extends React.Component{
 
+  constructor(props){
+    super(props);
+
+    this.state = { ketquaTinhtoan : ""};
+    this.suKienBamNut = this.suKienBamNut.bind(this);
+  }
+
+
+  suKienBamNut = function(nameNut) {
+    console.log(`Hello, my name is ${nameNut}`);
+  }
+
+
   render(){
     return(
       <div className="container">
         <div className="calc-body">
           <ScreenResult/>
-          <ButtomNum/>
+        <ButtomNum suKienBamNut={this.suKienBamNut}/>
         </div>
       </div>
     )
