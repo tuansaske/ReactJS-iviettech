@@ -14,8 +14,8 @@ class Caculator extends React.Component{
   }
 
 
-  suKienBamNut = function(nameNut) {
-    console.log(`Hello, my name is ${nameNut}`);
+  suKienBamNut = function(value) {
+    console.log(`Hello, my name is ${value}`);
   }
 
 
