@@ -1,11 +1,16 @@
 import React from 'react';
 import '../bai-so-1/baiSo1.css';
 
-import ButtomNum from '../bai-so-1/componentCalc/buttomKeyPad.js';
-import ScreenResult from '../bai-so-1/componentCalc/screenResult.js';
+import ButtonNum from './component/ButtonKeyPad.js';
+import ScreenResult from './component/ScreenResult.js';
 
 class Caculator extends React.Component{
 
+  constructor(){
+    super();
+
+    this.state = { ketquaTinhtoan : 0};
+  }
 
 
 
@@ -13,8 +18,8 @@ class Caculator extends React.Component{
     return(
       <div className="container">
         <div className="calc-body">
-          <ScreenResult ketquaTinhtoan={this.state.ketquaTinhtoan}/>
-          <ButtomNum suKienBamNut={this.suKienBamNut}/>
+          <ScreenResult/>
+          <ButtonNum suKienBamNut={this.suKienBamNut}/>
           <Toggle2/>
         </div>
       </div>

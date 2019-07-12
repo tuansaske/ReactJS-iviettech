@@ -57,7 +57,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Caculator from './bai-so-1/baiSo1';
+import Caculator from './bai-so-1-Calculate/baiSo1';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Caculator />, document.getElementById('root'));
