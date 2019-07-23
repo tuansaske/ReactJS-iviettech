@@ -36,7 +36,6 @@ class ButtonNum extends React.Component{
       var kiemTraketquaTinhtoan = 0;
 
 
-
       this.setState({
         ketquaTinhtoan: eval(kiemTraketquaTinhtoan)
       })
