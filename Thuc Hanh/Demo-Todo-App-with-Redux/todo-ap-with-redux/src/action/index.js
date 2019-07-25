@@ -14,3 +14,10 @@ export const delelteTodo = id => {
     id
   }
 }
+
+export const setTodoAction = todos => {
+  return {
+    type: "SET_TODO",
+    todos
+  };
+};

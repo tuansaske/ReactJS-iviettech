@@ -4,6 +4,9 @@ import {addTodo} from './action';
 
 import {delelteTodo} from './action';
 
+import axios from 'axios';
+import {setTodoAction} from './action';
+
 import './App.css';
 
 class App extends React.Component{
@@ -14,11 +17,28 @@ class App extends React.Component{
       text : '',
     };
     this.setText = this.setText.bind(this);
+    this.getTodoList = this.getTodoList.bind(this);
   }
 
   setText = (e) => {
     const value = e.target.value;
     this.setState({text:value});
+  }
+
+  async getTodoList() {
+    try {
+      const todos = await axios.get(
+        "https://jsonplaceholder.typicode.com/todos"
+      );
+      debugger;
+      this.props.setTodos(todos.data);
+    } catch (error) {
+      // show errors
+    }
+  }
+
+  componentDidMount() {
+    this.getTodoList();
   }
 
   render(){
@@ -29,10 +49,10 @@ class App extends React.Component{
     return(
       <div>
 
-        {this.props.tooo.map((todo) => {
+        {this.props.todos.map((todo) => {
           return(
             <div key={todo.id}>
-              <li>{todo.text}</li>
+              <li>{todo.title}</li>
               <a href="#"
               onClick ={()=> this.props.onDeleteTodo(todo.id)}>
               Delete Todo
@@ -40,7 +60,6 @@ class App extends React.Component{
             </div>
           );
         })}
-        {/* tách ra Component */}
 
 
         <input
@@ -61,7 +80,7 @@ class App extends React.Component{
 
 function mapStateToProps(state){
   return {
-    tooo: state.todos,
+    todos: state.todos,
 
     // todos: state.todos.filter(todo =>  todo.compieted === false)
   }
@@ -70,8 +89,11 @@ function mapStateToProps(state){
 
 const mapDispatchToProps = dispatch => {
   return{
-    onAddTodo: text => {
-      dispatch(addTodo(text));
+    setTodos: todos => {
+      dispatch(setTodoAction(todos));
+    },
+    onAddTodo: title => {
+      dispatch(addTodo(title));
     },
     onDeleteTodo: id => {
       dispatch(delelteTodo(id));

@@ -6,6 +6,9 @@
 const todos = (state = [], action) => {
   //debugger
   switch (action.type) {
+    case "SET_TODO":
+      return [...state, ...action.todos];
+      
     case 'ADD_TODO':
       return [
         ...state,
