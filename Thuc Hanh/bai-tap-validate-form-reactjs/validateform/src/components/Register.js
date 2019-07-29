@@ -92,8 +92,12 @@ class Register extends Component {
             <div className='info'>
               <small>Password must be eight characters in length.</small>
             </div>
+            <div className="alert display-none">
+              <span className="closebtn">&times;</span>
+              <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+            </div>
             <div className='submit'>
-              <button>Create</button>
+              <button onClick={this.handleSubmit}>Create</button>
             </div>
           </form>
         </div>
